@@ -29,6 +29,8 @@ class Inventario {
 //Se pueden crear otros objetos Inventarios para otras categorías
 let inventarioArt = new Inventario([]); //crea nuevo objeto 
 
+
+
 function guardar() {
     let nombre = document.getElementById("nombre").value; 
     let apellido = document.getElementById("apellido").value;
@@ -40,65 +42,52 @@ function guardar() {
 
 
     document.getElementById("correcto").innerText = '';//innerText actualiza el 
-    //contenido de texto del nodo seleccionado.
 
-    // Función flecha para "validar" todos los campos.
-    //Evalúa  la expression del lado derecho y devuelve su resultado
-    //Devuelve el mismo mensaje en caso que el valor no sea numérico para 'valor' y 'cantidad'
     let validar = (() => {
-        //Verificación de campos vacíos
-        let mensaje = ""; // defino a mensaje como vacio para luego
-        //llenarlo con el mensaje segun sea el caso de las propiedades 
-        //del objeto validado.
 
-        if (nombre == "") {// si es igual a vacio
-            mensaje += "Ingrese un nombre" + '\n';// a mensaje le add lo que
-            //esta entre comillas y remplaza el "" vacio.Hce un salto de 
-            //lina con "\n" en el caso de que los tres box esten vacias.
+        let mensaje = ""; 
+       
+
+        if (nombre == "") {
+           mensaje = "Complete todos los campos" ;
                 }
-        if (apellido == "") {//valor es vacio
-            mensaje += "Ingrese un apellido" + '\n'; //idem 
-
+        if (apellido == "") {
+            mensaje = "Complete todos los campos" ; 
         }
-        if (domicilio == "") { //idem 
-            mensaje += "Ingrese una domicilio" + '\n';//idem
+        if (domicilio == "") { 
+            mensaje = "Complete todos los campos" ;
         }
-        if (telefono == "") { //idem
-                mensaje += "Ingrese telefono" + '\n';  //idem
+        if (telefono == "") {
+            mensaje = "Complete todos los campos" ;  
         }
-        if (codPostal == "") { //idem
-            mensaje += "Ingrese codPostal" + '\n';  //idem
+        if (codPostal == "") { 
+            mensaje ="Complete todos los campos" ;  
          }
-         if (dni == "") { //idem
-            mensaje += "Ingrese dni" + '\n';  //idem
+         if (dni == "") { 
+            mensaje = "Complete todos los campos" ;  
          }
-         if (cuit == "") { //idem
-            mensaje += "Ingrese cuit" + '\n';  //idem
+         if (cuit == "") { 
+            mensaje ="Complete todos los campos" ; 
          }
-        //Verificación si los valores son numéricos "isNaN"
-        if (isNaN(telefono)) {  //intento convertir el parámetro pasado a un número
-            mensaje += "Ingrese un telefono" + '\n'; //mensaje le add lo que
-            //esta entre comillas y remplaza el "" vacio.Hace un salto de 
-            //linea con "\n".
+        if (isNaN(telefono)) { 
+            mensaje = "Complete todos los campos" ; 
         }
-        if (isNaN(codPostal)) { //idem
-            mensaje += "Ingrese una codPostal" + '\n';
-        // Si no se puede convertir, devuelve true; en caso contrario, devuelve false
+        if (isNaN(codPostal)) {
+            mensaje = "Complete todos los campos" ;
         }
         if (isNaN(dni)) { //idem
-            mensaje += "Ingrese un dni" + '\n';
-        }
+            mensaje = "Complete todos los campos" ;    
+            }
         if (isNaN(cuit)) { //idem
-            mensaje += "Ingrese un cuit" + '\n';
-        }
-        let parrafo_errores = document.getElementById("mensaje");//paso al id mensaje
-        //el contendido del validar
-        parrafo_errores.innerText = mensaje;// mensaje tiene el contenido del parrafo_errores
-        //Si no hay mensajes de error, retorna true
-        return mensaje == "" ? true : false; //sentencias condicional "?" parecido al 
-        //if, en este caso si no hay mensaje de error sigue con el proceso.
-        //finaliza la ejecución de la función y especifica un valor para
-        // ser devuelto a quien llama a la función.
+            mensaje ="Complete todos los campos" ;     
+           }
+
+           let parrafo_errores = document.getElementById("mensaje");
+        parrafo_errores.innerText = mensaje;
+       
+       
+
+        return mensaje == "" ? true : false; 
     })
 
     //Si la validación esta ok y retorna true, se agrega el producto al inventario
