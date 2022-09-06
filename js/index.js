@@ -11,7 +11,7 @@ class Rodamiento {
     this.cuit = cuit;
 }
     toString() { //método devuelve una cadena que representa el objeto
-        return `Nombre y apellido: ${this.nombre} ${this.apellido}, Domicilio: ${this.domicilio}, Telefono: ${this.telefono}, Codigo Postal: ${this.codPostal}, DNI: ${this.dni}, CUIT: ${this.cuit}`;
+        return `Nombre y apellido: ${this.nombre} ${this.apellido} - Domicilio: ${this.domicilio} - Telefono: ${this.telefono} - Codigo Postal: ${this.codPostal} - DNI: ${this.dni} - CUIT: ${this.cuit}`;
     }
 }
 
@@ -128,6 +128,6 @@ function listar() {
         if (otraList == true) {
          document.getElementById("otraLista").innerText = ""; 
        
-         rodamientos.forEach(rodamientos => resultad.innerText +=  `Nombre ${rodamientos.nombre} numero de CUIT ${rodamientos.cuit}` + '\n');
+         rodamientos.forEach(rodamientos => resultad.innerText +=  `${rodamientos.nombre} - CUIT ${rodamientos.cuit}` + '\n');
      }   
 }
