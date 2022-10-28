@@ -1,7 +1,7 @@
 "use strict";//El modo estricto hace que el navegador sea más exigente con tu código e intentará evitar errores potencialmente malos
 
 
-//Creamos un objeto llamado Producto, con sus propiedades
+//Creamos un objeto llamado Usuario, con sus propiedades
 //Utilizando el patrón de diseño Prototype generar luego herencias para otros obj
 class Usuario {// declaracion de una clase
 
@@ -33,9 +33,8 @@ class Inventario {//Creamos un objeto Inventario donde usuarios es un arreglo
     }
 }
 
-//Creamos un objeto inventarioArt y asigno un arreglo vacío
 //Se pueden crear otros objetos Inventarios para otras categorías
-let inventarioArt = new Inventario([]); 
+let inventarioArt = new Inventario([]); //Creamos un objeto inventarioArt y con ([]) le indicamos que va a ser un arrglo y que va a estar vacio
 //crea nuevo objeto 
 
 //Las variables var pueden ser modificadas y re-declaradas dentro de su 
@@ -108,9 +107,7 @@ function guardar() {
         parrafo_errores.innerText = mensaje;// mensaje tiene el contenido del parrafo_errores
         //Si no hay mensajes de error, retorna true
         return mensaje == "" ? true : false; //sentencias condicional "?" parecido al 
-        //if, en este caso si no hay mensaje de error sigue con el proceso.
-        //finaliza la ejecución de la función y especifica un valor para
-        // ser devuelto a quien llama a la función.
+        //if, si el mensaje de error esta vacio let validar va tener como valor true sino false y se corta la ejecucion 
     })
 
     if (validar()) {//Si la validación esta ok y retorna true, se agrega el usuario al inventario
@@ -153,7 +150,7 @@ function listar() {
         if (otraList == true) { //si es true 
          document.getElementById("otraLista").innerText = ""; //la iniciamos vacia
        
-      // usamos cada elemento del array de la misma manera que en la lista anterior pero llenamos el innetext sin ningun to string
+      // usamos cada elemento del array de la misma manera que en la lista anterior pero llenamos el innetext sin ningun metodo (lo inyectamos directo)
          usuarios.forEach(usuarios => resultad.innerText +=  `${usuarios.nombre} - CUIT ${usuarios.cuit}` + '\n');
      }   
 }
